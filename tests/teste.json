@@ -1,0 +1,12 @@
+{
+  "jogadores": {
+    "jogador1": {
+      "id": "id dos jogadores",
+      "qtdJogadas": 0
+    },
+    "jogador2": {
+      "id": "id dos jogadores",
+      "qtdJogadas": 0
+    }
+  }
+}
