@@ -6,13 +6,15 @@
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
-    "git": "^0.1.5"
+    "git": "^0.1.5",
+    "body-parser": "^1.19.0",
+    "mongoose": "^5.8.3"
   },
   "devDependencies": {
     "nodemon": "^2.0.2"
   },
   "scripts": {
-    "dev": "nodemon index.js",
+    "dev": "nodemon backend/server.js",
     "tests": "nodemon tests/tests.js"
   }
 }
