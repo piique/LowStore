@@ -1,8 +1,8 @@
-const express = require('express');
-const foodModel = require('../models/foods');
+const express = require("express");
+const foodModel = require("../models/food");
 const app = express();
 
-app.get('/foods', async (req, res) => {
+app.get("/foods", async (req, res) => {
   const foods = await foodModel.find({});
 
   try {
@@ -12,9 +12,9 @@ app.get('/foods', async (req, res) => {
   }
 });
 
-app.post('/food', async (req, res) => {
+app.post("/food", async (req, res) => {
   const food = new foodModel(req.body);
-  
+
   try {
     await food.save();
     res.send(food);
@@ -23,4 +23,4 @@ app.post('/food', async (req, res) => {
   }
 });
 
-module.exports = app
+module.exports = app;
