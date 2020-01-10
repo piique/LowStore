@@ -34,7 +34,7 @@ class SignUp extends Component {
     return (
       <Container>
         <Form onSubmit={this.handleSignUp}>
-          <img src={Logo} style={{width: 150, height: 127}} alt="Airbnb logo" />
+          <img src={Logo} style={{width: 150, height: 127}} alt="LowStore logo" />
           {this.state.error && <p>{this.state.error}</p>}
           <input
             type="text"

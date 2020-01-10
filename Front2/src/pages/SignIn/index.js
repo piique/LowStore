@@ -21,8 +21,8 @@ class SignIn extends Component {
       this.setState({ error: "Preencha e-mail e senha para continuar!" });
     } else {
       try {
-        //const response = await api.post("/sessions", { email, password });
-        login('response.data.token');
+        const response = await api.post("/sessions", { email, password });
+        login(response.data.token);
         this.props.history.push("/app");
       } catch (err) {
         this.setState({
@@ -37,7 +37,7 @@ class SignIn extends Component {
     return (
       <Container>
         <Form onSubmit={this.handleSignIn}>
-          <img src={Logo} alt="Airbnb logo" />
+          <img src={Logo} style={{width: 150, height: 127, marginBottom: '80px'}} alt="LowStore logo" />
           {this.state.error && <p>{this.state.error}</p>}
           <input
             type="email"
