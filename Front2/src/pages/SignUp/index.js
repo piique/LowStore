@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import api from "../../services/api";
-import { Link, withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 import Logo from "../../assets/LowStoreIcon.png";
 
 import { Form, Container } from "./styles";
 
-class Login extends Component {
+class SignUp extends Component {
   state = {
     username: "",
     email: "",
@@ -60,4 +60,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default SignUp;
