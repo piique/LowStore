@@ -12,4 +12,4 @@ mongoose.connect('mongodb+srv://LNb6IqMjV8jd4R6H:LNb6IqMjV8jd4R6H@lowstore-7lyq0
 
 app.use(foodRouter);
 
-app.listen(8080, () => { console.log('Server is running...') });
+app.listen(3000, () => { console.log('Server is running...') });
