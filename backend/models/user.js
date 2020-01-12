@@ -4,7 +4,7 @@ const UserSchema = new mongoose.Schema({
   name: {
     type: String,
     required: true,
-    trim: true
+    trim: true,
   },
   age: {
     type: Number,
@@ -12,5 +12,5 @@ const UserSchema = new mongoose.Schema({
   },
 });
 
-const Food = mongoose.model("Food", UserSchema);
+const Food = mongoose.model('Food', UserSchema);
 module.exports = Food;

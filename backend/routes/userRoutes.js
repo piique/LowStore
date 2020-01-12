@@ -1,8 +1,8 @@
-const express = require("express");
-const userModel = require("../models/user");
+const express = require('express');
+const userModel = require('../models/user');
 const app = express();
 
-app.get("/user", async (req, res) => {
+app.get('/user', async (req, res) => {
   const user = await userModel.find({});
 
   try {
@@ -12,7 +12,7 @@ app.get("/user", async (req, res) => {
   }
 });
 
-app.post("/user", async (req, res) => {
+app.post('/user', async (req, res) => {
   const user = new userModel(req.body);
 
   try {
