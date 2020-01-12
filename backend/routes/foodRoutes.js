@@ -2,7 +2,21 @@ const express = require('express');
 const foodModel = require('../models/food');
 const app = express();
 
-app.use(() => {});
+app.use((req, res, next) => {
+  console.time('Request time');
+  console.log(`Método ${req.method};\nURL: ${req.url};`);
+  next();
+
+  console.timeEnd('Request time');
+});
+
+function checkIdExists(req, res, next) {
+  if (!req.body.id) {
+    return res.status(400).json({ error: 'ID is required' });
+  }
+
+  return next();
+}
 
 app.get('/foods', async (req, res) => {
   const foods = await foodModel.find({});
