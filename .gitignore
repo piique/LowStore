@@ -1,3 +1,7 @@
+#
+
+backend/yarn.lock
+
 # Logs
 logs
 *.log
