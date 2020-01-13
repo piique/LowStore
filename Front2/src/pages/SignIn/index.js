@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 
 import Logo from "../../assets/LowStoreIcon.png";
-import api from "../../services/api";
+//import api from "../../services/api";
 import { login } from "../../services/auth";
 
 import { Form, Container } from "./styles";
@@ -21,9 +21,9 @@ class SignIn extends Component {
       this.setState({ error: "Preencha e-mail e senha para continuar!" });
     } else {
       try {
-        const response = await api.post("/sessions", { email, password });
-        login(response.data.token);
-        this.props.history.push("/app");
+        //const response = await api.post("/sessions", { email, password });
+        login('response.data.token');
+        this.props.history.push("/dashboard");
       } catch (err) {
         this.setState({
           error:
