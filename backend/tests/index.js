@@ -1,12 +1,12 @@
-const express = require("express");
+const express = require('express');
 
 const server = express();
 
 server.use(express.json());
 
-const users = ["Pedro", "Luis", "Tulio", "Joao", "Walter"];
+const users = ['Pedro', 'Luis', 'Tulio', 'Joao', 'Walter'];
 
-server.get("/user/:id", (req, res) => {
+server.get('/user/:id', (req, res) => {
   // console.log("teste");
 
   /*
@@ -24,26 +24,28 @@ server.get("/user/:id", (req, res) => {
 });
 
 // get specific user by index
-server.get("/users/:index", (req, res) => {
+server.get('/users/:index', (req, res) => {
   const index = req.params.index;
+  console.log(index);
 
   return res.json({ user: users[index] });
 });
 
 //get all users
-server.get("/users/all", (req, res) => {
+server.get('/users', (req, res) => {
+  console.log(users);
   return res.json(users);
 });
 
 // create new user
-server.post("/users", (req, res) => {
+server.post('/users', (req, res) => {
   const { name } = req.body; // const name = req.body.name
 
   if (users.indexOf(name) == -1) {
     users.push(name);
     return res.json(users);
   } else {
-    return res.json({ erro: "Usuário já existe!" });
+    return res.json({ erro: 'Usuário já existe!' });
   }
 });
 
