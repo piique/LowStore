@@ -55,6 +55,9 @@ const styles = () => ({
     },
     purple: {
         backgroudColor: '#7159C1'
+    },
+    listItem: {
+        textAlign: 'center'
     }
 });
 
@@ -82,18 +85,18 @@ const App = ({ classes }) => (
                         </ButtonGroup>                        
                     </Paper>
                     <Paper elevation={3} className={classes.paper}>
-                            <ListItem button>
+                            <ListItem button className={classes.listItem}>
                                 <ListItemText primary="Ingredientes" />
                             </ListItem>
                             <Divider />
-                            <ListItem button>
+                            <ListItem button className={classes.listItem}>
                                 <ListItemText primary="Produtos" />
                             </ListItem>
-                            <ListItem button>
+                            <ListItem button className={classes.listItem}>
                                 <ListItemText primary="Mostruario" />
                             </ListItem>
                             <Divider light />
-                            <ListItem button>
+                            <ListItem button className={classes.listItem}>
                                 <ListItemText primary="Estoque" />
                             </ListItem>
                     </Paper>
