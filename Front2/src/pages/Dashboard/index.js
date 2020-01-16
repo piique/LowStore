@@ -10,10 +10,10 @@ import {
     Icon,
     ListItemText,
     Divider,
-    List,
     Button,
     ButtonGroup,
 } from "@material-ui/core";
+import Ingredientes from './ingredientes';
 
 const styles = () => ({
     root: {
@@ -23,7 +23,7 @@ const styles = () => ({
     },
     card: {
         display: "list-item",
-        backgroundColor: '#f5f5f5',
+        backgroundColor: '#e4e8f2',
         height: "calc(100vh - 100px)"
     },
     rightBorder: {
@@ -37,7 +37,7 @@ const styles = () => ({
         height: 200,
         width: "100%",
         top: 0,
-        background: "#7159C1"
+        background: "#455791"
     },
     paper: {
         padding: 20,
@@ -101,7 +101,7 @@ const App = ({ classes }) => (
                             </ListItem>
                     </Paper>
                     <Paper elevation={3} className={classes.lastPaper}>
-                        Graficos
+                        <Ingredientes/>
                     </Paper>
                 </Card>
             </Grid>
