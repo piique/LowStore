@@ -59,7 +59,7 @@ app.delete('/food/:id', async (req, res) => {
 
 app.put('/food/:id', async (req, res) => {
   try {
-    console.log(req.body)
+    console.log(req.body);
     const food = await foodModel.findByIdAndUpdate(req.params.id, req.body);
     await food.save();
     res.send(food);
