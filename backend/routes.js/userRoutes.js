@@ -1,0 +1,26 @@
+const express = require('express');
+const userModel = require('../models/user.model');
+const router = express();
+
+router.get('/user', async (req, res) => {
+  const user = await userModel.find({});
+
+  try {
+    res.send(user);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+router.post('/user', async (req, res) => {
+  const user = new userModel(req.body);
+
+  try {
+    await user.save();
+    res.send(user);
+  } catch (err) {
+    res.status(500).send(err);
+  }
+});
+
+module.exports = router;

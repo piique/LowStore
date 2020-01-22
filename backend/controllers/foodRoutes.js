@@ -1,8 +1,8 @@
 const express = require('express');
-const foodModel = require('../models/food');
-const app = express();
+const foodModel = require('../models/food.model');
+const router = express();
 
-app.use((req, res, next) => {
+router.use((req, res, next) => {
   console.time('Request time');
   console.log(`Método ${req.method};\nURL: ${req.url};`);
   next();
@@ -18,7 +18,7 @@ function checkIdExists(req, res, next) {
   return next();
 }
 
-app.get('/foods', async (req, res) => {
+router.get('/foods', async (req, res) => {
   const foods = await foodModel.find({});
 
   try {
@@ -28,7 +28,7 @@ app.get('/foods', async (req, res) => {
   }
 });
 
-app.post('/food', async (req, res) => {
+router.post('/food', async (req, res) => {
   const food = new foodModel(req.body);
 
   try {
@@ -39,7 +39,7 @@ app.post('/food', async (req, res) => {
   }
 });
 
-app.delete('/food/:id', async (req, res) => {
+router.delete('/food/:id', async (req, res) => {
   try {
     const food = await foodModel.findByIdAndDelete(req.params.id);
     if (!food) res.status(404).send('No food found');
@@ -57,7 +57,7 @@ app.delete('/food/:id', async (req, res) => {
 //   return res.json(users);
 // });
 
-app.put('/food/:id', async (req, res) => {
+router.put('/food/:id', async (req, res) => {
   try {
     console.log(req.body)
     const food = await foodModel.findByIdAndUpdate(req.params.id, req.body);
@@ -68,4 +68,4 @@ app.put('/food/:id', async (req, res) => {
   }
 });
 
-module.exports = app;
+module.exports = router;

@@ -1,8 +1,8 @@
 const express = require('express');
-const userModel = require('../models/user');
-const app = express();
+const userModel = require('../models/user.model');
+const router = express();
 
-app.get('/user', async (req, res) => {
+router.get('/user', async (req, res) => {
   const user = await userModel.find({});
 
   try {
@@ -12,7 +12,7 @@ app.get('/user', async (req, res) => {
   }
 });
 
-app.post('/user', async (req, res) => {
+router.post('/user', async (req, res) => {
   const user = new userModel(req.body);
 
   try {
@@ -23,4 +23,4 @@ app.post('/user', async (req, res) => {
   }
 });
 
-module.exports = app;
+module.exports = router;
